@@ -1,48 +1,54 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-require("dotenv").config({
+const config = require('./src/data/config');
+
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
+
 module.exports = {
   siteMetadata: {
-    title: "Barcadia",
-    description: "A super-fast site using GatsbyJS",
-    author: "Morgan Baker",
-    twitterUsername: "barcadia",
-    facebookUsername: "barcadia",
-    instagramUsername: "barcadia",
-    linkedinUsername: "barcadia",
-    image: "/macbook-color.jpg",
-    siteUrl: "https://barcadia.netlify.com",
-    developerName: "Morgan Baker Development",
-    developerUrl: "https://www.morganbaker.dev",
+    title: config.defaultTitle,
+    description: config.defaultDescription,
+    author: config.author,
   },
-  /* Your site config here */
+  flags: {
+    FAST_DEV: true,
+    PARALLEL_SOURCING: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true
+  },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: `gatsby-plugin-sharp`,
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        defaults: {
+          formats: [`auto`, `webp`, `avif`],
+          placeholder: `blurred`
+        }
+      }
+    },
+    `gatsby-plugin-sass`,
+    'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: config.themeColor,
+        showSpinner: true,
       },
     },
     {
-      resolve: "gatsby-plugin-robots-txt",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        host: "https://barcadia.netlify.com",
-        sitemap: "https://barcadia.netlify.com/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
+        name: config.defaultTitle,
+        short_name: 'LDU',
+        start_url: '/',
+        theme_color: 'white',
+        background_color: 'white',
+        display: 'standalone',
+        icon: 'src/images/icon.png',
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-image`,
+    'gatsby-plugin-offline',
   ],
-}
+};

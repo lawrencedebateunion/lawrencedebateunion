@@ -1,28 +1,29 @@
-import * as React from "react"
-import Layout from "../components/Layout"
-import { Link } from "gatsby"
-import Seo from "../components/SEO"
-import Button from "../components/Button/Button"
+import React from 'react';
+import { SidePageLayout, SEOConfig } from 'components/common';
+import { GenericIntro } from 'components/landing';
+import styled from "styled-components";
 
-const error = () => {
+const Center = styled.div`
+  text-align: center;
+  h3 {
+    margin-top: -0.25rem;
+    font-size: 20px;
+  }
+`;
+
+const Page404 = () => {
+
   return (
-    <>
-      <Seo title="Error" />
-      <Layout>
-        <div className="section">
-          <div className="container container__tight">
-            <h1>Sorry.</h1>
-            <h3>This page has moved or no longer exists.</h3>
-            <p>
-              Please choose another option from the menu above, or to return
-              home, press the button below.
-            </p>
-            <Button text="Return Home" to="/" as={Link} />
-          </div>
-        </div>
-      </Layout>
-    </>
-  )
-}
+  <SidePageLayout>
+    <SEOConfig title="404: Not found" location="/404" />
+    <GenericIntro/>
+    <Center>
+      <h1>404: not found</h1>
+      <h3><b>this page does not exist.</b></h3>
+      <br/>
+    </Center>
+  </SidePageLayout>
+);
+};
 
-export default error
+export default Page404;

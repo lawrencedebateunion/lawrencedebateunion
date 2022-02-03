@@ -1,13 +1,6 @@
-import React from "react"
-import { MenuProvider } from "./src/components/MenuContext"
-import { AnimatePresence } from "framer-motion"
-import "@fontsource/heebo/400.css"
-import "@fontsource/heebo/700.css"
+import React from 'react';
+import ThemeProvider from 'providers/ThemeProvider';
 
-export function wrapPageElement({ element }) {
-  return <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
-}
+export const onServiceWorkerUpdateReady = () => window.location.reload(true);
 
-export function wrapRootElement({ element }) {
-  return <MenuProvider>{element}</MenuProvider>
-}
+export const wrapRootElement = ({ element }) => <ThemeProvider>{element}</ThemeProvider>;

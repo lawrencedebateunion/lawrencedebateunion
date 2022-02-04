@@ -1,1 +1,2 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8be27d1b-dcaa-4154-9cab-e7598013b9fb/deploy-status)](https://app.netlify.com/sites/plot/deploys)
+<h1>Lawrence Debate Union</h1>
+https://lawrencedebateunion.com | Open-Source | Gatsby.JS

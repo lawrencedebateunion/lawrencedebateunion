@@ -5,9 +5,10 @@ import { Wrapper, Flex, Links, Details, Privacy, Email, Creator } from './styles
 import { ThemeContext } from 'providers/ThemeProvider';
 import ToggleTheme from './ToggleTheme';
 import social from './social.json';
-import lock from 'assets/illustrations/lock.svg';
-import email from 'assets/illustrations/email.svg';
-import creator from 'assets/illustrations/creator.svg';
+import twitter from 'assets/illustrations/twitter.svg';
+import instagram from 'assets/illustrations/instagram.svg';
+import facebook from 'assets/illustrations/facebook.svg';
+import github from 'assets/illustrations/github.svg';
 
 export const Footer = () => {
 
@@ -16,37 +17,25 @@ export const Footer = () => {
   return (
     <Wrapper>
       <Flex as={Container}>
-        {/*
-        <Links>
-          {social.map(({ id, name, link, icon }) => (
-            <a key={id} href={link} target="_blank" rel="noopener noreferrer" aria-label={`email me at ${name}`}>
-              <img width="24" src={icon} alt={name} />
-            </a>
-          ))}
-          </Links>*/}
-
-        <div className="tooltip">
-            <Link to="/404"><Privacy theme={theme}> <img src={lock} alt="button to access privacy policy"/></Privacy></Link>
-            <span className="tooltiptext">
-              privacy policy
-            </span>
-          </div>
-
-        <div className="tooltip">
-            <a href="mailto:hey@tomek.org"><Email theme={theme}> <img src={email} alt="button to email us"/></Email></a>
-            <span className="tooltiptextemail">
-              send us an email
-            </span>
-          </div>
+        <ToggleTheme/>
+        <a href="https://www.instagram.com/lawrencedebateunion" target="_blank" rel="noreferrer"><Privacy theme={theme}> <img src={instagram} alt="button to access privacy policy"/></Privacy></a>
+        <a href="https://twitter.com/uvmdebate" target="_blank" rel="noreferrer"><Privacy theme={theme}> <img src={twitter} alt="button to access privacy policy"/></Privacy></a>
+        <a href="https://www.facebook.com/LDUVT" target="_blank" rel="noreferrer"><Privacy theme={theme}> <img src={facebook} alt="button to access privacy policy"/></Privacy></a>
+        <a href="https://github.com/lawrencedebateunion" target="_blank" rel="noreferrer"><Creator theme={theme}> <img src={github} alt="button to access privacy policy"/></Creator></a>
+      </Flex>
+      <br/>
+      <Flex as={Container}>
+        <Links><Link to="/privacy"><u>Privacy policy</u></Link>{" "}|{" "}
+        <a href="mailto:hey@tomek.org"><u>Send us an email</u></a></Links>
+      </Flex>
 
         <Details theme={theme}>
           <span><b>
-            © {new Date().getFullYear()} Lawrence Debate Union  | made with{' '}
+            © {new Date().getFullYear()} Lawrence Debate Union  | Made with{' '}
             <span aria-label="love" role="img">
             ❤️
-            </span> by <a href="https://tomek.org"><u>tomek.org</u></a></b></span>
+            </span> by <a href="https://tomek.org"><u>tomek.org</u></a>.</b></span>
         </Details>
-      </Flex>
     </Wrapper>
 )
 };

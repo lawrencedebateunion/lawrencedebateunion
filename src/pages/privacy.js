@@ -5,7 +5,7 @@ import { Privacy } from 'components/landing';
 const PagePrivacy = () => {
   return (
   <SidePageLayout>
-    <SEOConfig title="privacy policy" location="/privacy" />
+    <SEOConfig title="Privacy Policy" location="/privacy" />
     <Privacy/>
   </SidePageLayout>
 );

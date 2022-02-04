@@ -18,35 +18,23 @@ export const Details = styled.div`
     margin-bottom: 1rem;
     font-size: 30pt;
     color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#000')};
-
-    @media (max-width: 960px) {
-      mix-blend-mode: ${({ theme }) => (theme === 'light' ? 'unset' : 'difference')};
-    }
   }
 
   h2 {
     margin-bottom: 1rem;
-    font-size: 18pt;
+    font-size: 15pt;
     color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#000')};
-
-    @media (max-width: 960px) {
-      mix-blend-mode: ${({ theme }) => (theme === 'light' ? 'unset' : 'difference')};
-    }
   }
 
   p {
     margin-bottom: 1.2rem;
     font-size: 15pt;
     font-weight: bold;
-    line-height: 2;
+    line-height: 1.5;
     text-align: left;
     margin-left: auto;
     margin-right: auto;
     max-width: 500px;
     color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#000')};
-
-    @media (max-width: 960px) {
-      mix-blend-mode: ${({ theme }) => (theme === 'light' ? 'unset' : 'difference')};
-    }
   }
 `;

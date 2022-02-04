@@ -5,8 +5,6 @@ import NavbarLinks from '../NavbarLinks';
 import { Wrapper, Wrapper2, Brand, Line } from './styles';
 import logo from 'assets/illustrations/logo.svg';
 
-import { HideBetween } from 'react-hide-on-scroll';
-
 const Navbar = () => {
 
   return (

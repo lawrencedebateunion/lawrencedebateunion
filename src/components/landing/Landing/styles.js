@@ -35,14 +35,12 @@ export const BannerBody = styled.div`
 `;
 
 export const BannerDetails = styled.div`
-  flex: 1;
   @media (max-width: 960px) {
     width: 100%;
     margin-bottom: 2rem;
-
   }
   h1 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
     font-size: 25pt;
     font-weight: bold;
     color: ${({ theme }) => (theme === 'light' ? '#212121' : '#fff')};
@@ -57,7 +55,7 @@ export const BannerDetails = styled.div`
   }
   h2 {
     margin-bottom: 1rem;
-    font-size: 40pt;
+    font-size: 50pt;
     font-weight: bold;
     color: ${({ theme }) => (theme === 'light' ? '#212121' : '#fff')};
 
@@ -71,13 +69,20 @@ export const BannerDetails = styled.div`
       font-size: 26pt;
     }
   }
+      {/*border: solid 0px;
+      border-radius: 30px;
+      background: grey;
+      display: inline-block;
+      padding: 40px;
+      padding-left: 45px;
+      padding-right: 45px;*/}
 `;
 
 export const BannerThumbnail = styled.div`
   transition: all 0.5s ease;
   position: absolute;
-  width: 70%;
-  right: 0;
+  width: 60%;
+  right: 120px;
   bottom: 0;
   pointer-events: none;
   @media (max-width: 960px) {
@@ -160,7 +165,6 @@ export const ContentDetails = styled.div`
   }
 
   h1 {
-    margin-bottom: 2rem;
     font-size: 26pt;
     color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#212121')};
 
@@ -197,13 +201,14 @@ export const ContentDetails = styled.div`
   }
   a.linkstyle {
     text-decoration: underline;
-    color: lightblue;
+    color: ${({ theme }) => (theme === 'dark' ? '#83BAAE' : '#08755E')};
   }
 `;
 
 export const ContentThumbnailLeft = styled.div`
   flex: 1;
   pointer-events: none;
+  margin-left: 5rem;
 
   @media (max-width: 960px) {
     width: 80%;
@@ -211,7 +216,7 @@ export const ContentThumbnailLeft = styled.div`
   }
 
   img {
-    width: 100%;
+    width: 90%;
   }
 `;
 
@@ -232,23 +237,46 @@ export const ContentThumbnailRight = styled.div`
   }
 `;
 
-export const ButtonSoon = styled.button`
+export const ButtonDisabled = styled.button`
   cursor: not-allowed;
   border-radius: 10px;
-  padding: 1rem 2.5rem;
+  padding: 0.5rem 1.5rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   justify-content: center;
   border: none;
+  -webkit-appearance: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   transition: all 0.5s ease;
+  display: table;
+  margin-top: -1rem;
+  margin-bottom: -1.5rem;
   background: ${({ theme }) => (theme === 'dark' ? '#FFF' : '#000')};
   color: ${({ theme }) => (theme === 'dark' ? '#000' : '#FFF')};
   :hover {
     box-shadow: inset 0 0 100px 100px #FF9999;
   }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    background: gray;
+  }
+  ${({ secondary }) =>
+    secondary &&
+    `
+		background: #001F3F;
+	`}
 `;
 
-export const Center = styled.div`
+export const Label = styled.h1`
+  margin: 0 0 10px 0;
+  padding: 0;
+  font-size: 26pt;
 `;

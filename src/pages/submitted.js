@@ -5,7 +5,7 @@ import { GenericIntro, Submitted } from 'components/landing';
 const PageSubmitted = () => {
   return (
   <SidePageLayout>
-    <SEOConfig title="waitlist submitted" location="/submitted" />
+    <SEOConfig title="Inquiry Submitted" location="/submitted" />
     <GenericIntro/>
     <Submitted/>
   </SidePageLayout>

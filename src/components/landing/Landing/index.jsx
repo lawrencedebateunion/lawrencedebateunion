@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'providers/ThemeProvider';
 import { StaticImage } from "gatsby-plugin-image";
+import map from 'assets/illustrations/map.svg';
 import wind from 'assets/illustrations/debate.svg';
 import { Header } from 'components/theme';
-import { Wrapper, Banner, BannerBody, BannerDetails, BannerThumbnail, Content, ContentBodyLead, Line, ContentBody, ContentThumbnailLeft, ContentDetails, ContentThumbnailRight, ButtonSoon, ContentBody1 } from './styles';
+import { Wrapper, Banner, BannerBody, BannerDetails, BannerThumbnail, Content, ContentBodyLead, Line, ContentBody, ContentThumbnailLeft, ContentDetails, ContentThumbnailRight, ButtonDisabled, ContentBody1, Label } from './styles';
 import { Container, Button } from 'components/common';
 import { Link } from "gatsby";
 import Join from './Join';
@@ -12,7 +13,7 @@ function Thumbnail() {
  return (
    <StaticImage
      src={"./edwin.png"}
-     alt="edwin lawrence"
+     alt="debate house"
    />
  )
 }
@@ -28,7 +29,7 @@ export const Landing = () => {
         <BannerBody as={Container}>
           <BannerDetails theme={theme}>
             <h1>We speak truth to power.</h1>
-            <h2>Welcome to the <br/><font color="#08755E"><u>Lawrence Debate Union</u>.</font></h2>
+            <h2>Welcome to the <br/><font color="#08755E"><u>Lawrence Debate Union.</u></font></h2>
           </BannerDetails>
         </BannerBody>
         <BannerThumbnail>
@@ -44,7 +45,7 @@ export const Landing = () => {
   </ContentBodyLead>*/}
 
         <ContentBody as={Container} id="schedule">
-          <ContentDetails>
+          <ContentDetails theme={theme}>
               <h1>Schedule</h1>
               <p>
                 <b>Monday Business Meetings</b>: 6pm - 8pm
@@ -52,46 +53,51 @@ export const Landing = () => {
                 <b>Wednesday Social Justice Practice</b>: 7pm - 9pm
                 <br/><br/>
                 <b>Thursday British Parliamentary Practice</b>: 7pm - 9pm
+                <br/><br/>
+                All meetings take place at <a className="linkstyle" href="https://goo.gl/maps/zqu57ZdHanWoxNyH6" target="_blank" rel="noreferrer">475 Main Street (Huber House)</a>.
               </p>
           </ContentDetails>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d362.08466271768737!2d-73.20028229307815!3d44.47593694018157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cca7a5af98f7247%3A0xc856ec7b4587c81f!2s475%20Main%20St%2C%20Winooski%2C%20VT%2005404!5e0!3m2!1sen!2sus!4v1643929376767!5m2!1sen!2sus" width="450" height="450" allowfullscreen="" loading="lazy"></iframe>
+          <ContentThumbnailLeft>
+              <img src={map} alt="person at the podium"/>
+          </ContentThumbnailLeft>
         </ContentBody>
 
         <ContentBody as={Container} id="competitions">
           <ContentThumbnailRight>
-              <img src={wind} alt="person at the podium"/>
+              <img src={wind} alt="Person speaking at a podium."/>
           </ContentThumbnailRight>
-          <ContentDetails>
-              <h1>Competitions</h1>
-              <p>
-                <b>Rochester Tournament</b>: Feb 26th-27th
-                <br/><br/>
-                <Button theme={theme} as={Link} href="/register">
+          <ContentDetails theme={theme}>
+            <h1>
+              Competitions
+            </h1>
+            <p>
+              <b>Rochester Tournament</b>: Feb 26th-27th
+              <br/><br/>
+              <ButtonDisabled theme={theme}>
+                Registration Closed
+              </ButtonDisabled>
+              <br/><br/>
+              <b>Schuman Challenge</b>: Feb 28th-Mar 1st
+              <br/><br/>
+              <Button theme={theme} as={Link} href="/register_schuman">
                 Register →
-                </Button>
-                <br/><br/>
-                <b>Schuman Challenge</b>: Feb 28th-Mar 1st
-                <br/><br/>
-                <Button theme={theme} as={Link} href="/register">
+              </Button>
+              <br/><br/>
+              <b>Vanderbilt Tournament</b>: Mar 11th-14th
+              <br/><br/>
+              <Button theme={theme} as={Link} href="/register">
                 Register →
-                </Button>
-                <br/><br/>
-                <b>Vanderbilt Tournament</b>: Mar 11th-14th
-                <br/><br/>
-                <Button theme={theme} as={Link} href="/register">
-                Register →
-                </Button>
-                <br/><br/>
-                
-                
-              </p>
-              
+              </Button>
+              <br/><br/>
+            </p> 
           </ContentDetails>
         </ContentBody>
 
-        
         <ContentBody1 as={Container} id="contact">
-          <ContentDetails>
+          <ContentDetails theme={theme}>
+          <Label>
+            Contact
+          </Label>
               <Join/>
           </ContentDetails>
         </ContentBody1>

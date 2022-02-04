@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'providers/ThemeProvider';
 import { Container } from 'components/common';
-import { Wrapper, Details } from './Waitlist/styles';
+import { Wrapper, Details } from './RegisterSchuman/styles';
 
 export const Submitted = () => {
   const { theme } = useContext(ThemeContext);
@@ -9,11 +9,9 @@ export const Submitted = () => {
   return (
     <Wrapper as={Container}>
       <Details theme={theme}>
-        <h1>plöt waitlist</h1>
+        <h1>Inquiry Submitted.</h1>
         <p>
-          <span aria-label="fire" role="img">
-            🔥
-          </span> thanks for submitting!
+          Expect a response within the next week.
         </p>
       </Details>
     </Wrapper>

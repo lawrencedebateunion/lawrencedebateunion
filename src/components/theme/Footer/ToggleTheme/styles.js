@@ -4,10 +4,9 @@ export const Wrapper = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  filter: ${({ theme }) => (theme === 'dark' ? 'invert(1)' : 'invert(0)')};
+  filter: invert(1);
   transition: 0.3s all;
-  margin-right: 0.3rem;
-
+  margin-right: 3.2rem;
   img {
     margin-bottom: unset;
   }

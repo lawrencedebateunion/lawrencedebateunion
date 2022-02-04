@@ -15,9 +15,8 @@ export const Wrapper2 = styled.div`
 `;
 
 export const Brand = styled.a`
-  width: 300px;
+  width: 225px;
   margin-top: -70px;
-  filter: ${({ theme }) => (theme === 'dark' ? 'invert(1)' : 'invert(0)')};
   @media only screen and (max-width: 680px) {
     width: 200px;
     margin-top: -40px;
@@ -28,5 +27,4 @@ export const Line = styled.hr`
   height: 0;
   border-radius: 10px;
   border: 3px solid #08755E;
-  background: black;
 `;

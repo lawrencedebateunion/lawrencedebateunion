@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { navigate } from "gatsby";
 import { Link } from "gatsby";
-import { Logo, Wrapper1, RegisterButton, Input, Select, Label, SubLabel, Textarea} from './register_styles';
+import { Wrapper1, RegisterButton, Input, Label, Textarea} from './register_styles';
 import { Row, Col } from "react-grid-system";
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value
 });
+
+{/*   gender: "",  */}
 
 class Join extends Component {
   
@@ -16,8 +18,7 @@ class Join extends Component {
       name: "",
       email: "",
       year: "",
-      gender: "",
-      why: "",
+      message: "",
       time: ""
     };
 
@@ -28,27 +29,26 @@ class Join extends Component {
     console.log(this.state);
     const data = new FormData(event.target);
     fetch(
-      "https://script.google.com/macros/s/AKfycbyOWWQ2c2otCdwYTTP2axCLTTkBrPES9LSWzko9XCxXSvYlCdCo-o3yqs7tKW3yxGy_eg/exec",
+      "https://script.google.com/macros/s/AKfycbwCGKbLGuOmpprMWHlJCLQoH0hmAaxtyzMmZVC43QHjxOIkuH8rpxd5ZR4WpAevRaaLjA/exec",
       { method: "POST", body: data }
     )
       .then(response => console.log("success!", response))
       .catch(error => console.error("error!", error.message));
     event.preventDefault();
-    navigate("/submitted");
+    navigate("/404");
   }
 
   render() {
     return (
         <form onSubmit={this.handleSubmit}>
-          <br/><br/><br/>
+          <br/>
           <Wrapper1>
-          <Label>Contact</Label>
           <Row>
             <Col>
               <Input
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder="Name*"
                 value={this.state.name}
                 required
                 onChange={event =>
@@ -62,7 +62,7 @@ class Join extends Component {
               <Input
                 type="text"
                 name="email"
-                placeholder="Email"
+                placeholder="Email*"
                 value={this.state.email}
                 required
                 onChange={event =>
@@ -75,13 +75,12 @@ class Join extends Component {
             <Col>
               <Input
                 type="text"
-                name="gender"
-                placeholder="Gender"
-                value={this.state.gender}
-                required
+                name="Class Year"
+                placeholder="Class Year"
+                value={this.state.year}
                 onChange={event =>
                   this.setState(
-                    updateByPropertyName("gender", event.target.value)
+                    updateByPropertyName("year", event.target.value)
                   )
                 }
               />
@@ -90,15 +89,14 @@ class Join extends Component {
           <br/>
           <Row>
             <Col>
-              <br />
               <Textarea
-                name="why"
+                name="message"
                 type="text"
-                placeholder="Message"
-                value={this.state.why}
+                placeholder="Message*"
+                value={this.state.message}
                 required
                 onChange={event =>
-                  this.setState(updateByPropertyName("why", event.target.value))
+                  this.setState(updateByPropertyName("message", event.target.value))
                 }
               />
             </Col>

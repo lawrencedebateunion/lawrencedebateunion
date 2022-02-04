@@ -21,9 +21,9 @@ export const RegisterButton = styled.button`
 `;
 
 export const Wrapper1 = styled.div`
-text-align: center;
-margin-left: 5%;
-margin-right: 5%;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
 `;
 
 export const Details = styled.div`
@@ -60,25 +60,6 @@ export const Input = styled.input`
   }
 `;
 
-export const Select = styled.select`
-  color: #666666;
-  font-size: 12pt;
-  padding: 10px;
-  text-align: center;
-  background: #DCDCDC;
-  width: 100%;
-  border: 2px solid #DCDCDC;
-  appearance: none;
-  -webkit-appearance: none;
-  border-radius: 10px;
-  transition: all 300ms ease hover;
-  &:hover {
-    border: 2px solid #08755E;
-  }
-`;
-
-//&:focus {}
-
 export const Submit = styled.button`
   font-size: 24px;
   padding: 10px;
@@ -103,16 +84,6 @@ export const Label = styled.h1`
   color: #000;
 `;
 
-export const SubLabel = styled.p`
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-`;
-
 export const Textarea = styled.textarea`
   height: 100px;
   padding: 10px;
@@ -122,7 +93,7 @@ export const Textarea = styled.textarea`
   transition: all 300ms ease hover;
   width: 60%;
   font-size: 16px;
-  &:focus {
+  &:hover {
     border: 2px solid #08755E;
   }
 `;

@@ -20,10 +20,10 @@ export const Button = styled.button`
   display: table;
   margin-top: -1rem;
   margin-bottom: -1.5rem;
-  background: #000;
-  color: #FFF;
+  background: ${({ theme }) => (theme === 'dark' ? '#FFF' : '#000')};
+  color: ${({ theme }) => (theme === 'dark' ? '#000' : '#FFF')};
   :hover {
-    box-shadow: inset 0 0 100px 100px #444d56;
+    box-shadow: ${({ theme }) => (theme === 'dark' ? 'inset 0 0 100px 100px #E5E5E5' : 'inset 0 0 100px 100px #444d56')};
   }
   &:focus {
     outline: none;

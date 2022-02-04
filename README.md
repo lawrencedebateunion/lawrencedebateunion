@@ -1,2 +1,4 @@
 <h1>Lawrence Debate Union</h1>
-https://lawrencedebateunion.com | Open-Source | Gatsby.JS
+University of Vermont | Open-Source | Gatsby.JS
+
+Created by Tomek <tomek.org>

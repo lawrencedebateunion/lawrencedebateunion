@@ -18,8 +18,8 @@ const Page404 = () => {
     <SEOConfig title="404: Not found" location="/404" />
     <GenericIntro/>
     <Center>
-      <h1>404: not found</h1>
-      <h3><b>this page does not exist.</b></h3>
+      <h1>404: Not Found</h1>
+      <h3><b>This page does not exist.</b></h3>
       <br/>
     </Center>
   </SidePageLayout>

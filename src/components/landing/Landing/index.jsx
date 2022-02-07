@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'providers/ThemeProvider';
 import { StaticImage } from "gatsby-plugin-image";
+import line from 'assets/illustrations/line.png';
 import map from 'assets/illustrations/map.svg';
 import wind from 'assets/illustrations/debate.svg';
 import { Header } from 'components/theme';
-import { Wrapper, Banner, BannerBody, BannerDetails, BannerThumbnail, Content, ContentBodyLead, Line, ContentBody, ContentThumbnailLeft, ContentDetails, ContentThumbnailRight, ButtonDisabled, ContentBody1, Label } from './styles';
+import { Wrapper, Banner, BannerBody, BannerDetails, ContentThumbnail, BannerThumbnail, Content, ContentBodyLead, Line, ContentBody, ContentThumbnailLeft, ContentDetails, ContentThumbnailRight, ButtonDisabled, ContentBody1, Label } from './styles';
 import { Container, Button } from 'components/common';
 import { Link } from "gatsby";
 import Join from './Join';
@@ -27,9 +28,12 @@ export const Landing = () => {
       <Banner>
         
         <BannerBody as={Container}>
+          <ContentThumbnail theme={theme}>
+              <img src={line} alt="vertical line"/>
+          </ContentThumbnail>
           <BannerDetails theme={theme}>
             <h1>We speak truth to power.</h1>
-            <h2>Welcome to the <br/><font color="#08755E"><u>Lawrence Debate Union.</u></font></h2>
+            <h2>Welcome to the <br/><font color="#08755E">Lawrence Debate Union.</font></h2>
           </BannerDetails>
         </BannerBody>
         <BannerThumbnail>

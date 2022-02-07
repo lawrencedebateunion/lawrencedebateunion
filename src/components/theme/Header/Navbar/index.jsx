@@ -13,7 +13,7 @@ const Navbar = () => {
       <Brand as={Link} to="/" >
         <img src={logo} alt="LDU logo" />
       </Brand>
-      <NavbarLinks/>
+      {/*<NavbarLinks/>*/}
       </Wrapper2>
       <Line /> 
     </Wrapper>

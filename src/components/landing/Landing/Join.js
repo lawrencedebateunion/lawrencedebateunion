@@ -8,7 +8,9 @@ const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value
 });
 
-{/*   gender: "",  */}
+{/*   gender: "",  
+      year (class)
+*/}
 
 class Join extends Component {
   
@@ -17,7 +19,6 @@ class Join extends Component {
     this.state = {
       name: "",
       email: "",
-      year: "",
       message: "",
       time: ""
     };
@@ -72,19 +73,6 @@ class Join extends Component {
                 }
               />
             </Col>
-            <Col>
-              <Input
-                type="text"
-                name="Class Year"
-                placeholder="Class Year"
-                value={this.state.year}
-                onChange={event =>
-                  this.setState(
-                    updateByPropertyName("year", event.target.value)
-                  )
-                }
-              />
-            </Col>
           </Row>
           <br/>
           <Row>
@@ -101,7 +89,6 @@ class Join extends Component {
               />
             </Col>
           </Row>
-          <br />
           <br/>
             <RegisterButton type="submit">Submit</RegisterButton>
             </Wrapper1>

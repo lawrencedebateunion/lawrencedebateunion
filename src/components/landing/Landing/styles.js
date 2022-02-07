@@ -22,6 +22,7 @@ export const Banner = styled.div`
 
 export const BannerBody = styled.div`
   padding: 4rem 0;
+  padding-top: 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,6 +36,7 @@ export const BannerBody = styled.div`
 `;
 
 export const BannerDetails = styled.div`
+  margin-left: 2rem;
   @media (max-width: 960px) {
     width: 100%;
     margin-bottom: 2rem;
@@ -82,16 +84,30 @@ export const BannerThumbnail = styled.div`
   transition: all 0.5s ease;
   position: absolute;
   width: 60%;
-  right: 120px;
+  right: 75px;
   bottom: 0;
   pointer-events: none;
   @media (max-width: 960px) {
-    width: 95%;
-    margin-left: 1rem;
+
   }
 
   img {
     width: 100%;
+  }
+`;
+
+export const ContentThumbnail = styled.div`
+  flex: 1;
+  pointer-events: none;
+  margin-left: 0rem;
+  filter: ${({ theme }) => (theme === 'dark' ? 'invert(1)' : 'invert(0)')};
+  position: absolute;
+
+  @media (max-width: 960px) {
+  }
+
+  img {
+    width: 30%;
   }
 `;
 

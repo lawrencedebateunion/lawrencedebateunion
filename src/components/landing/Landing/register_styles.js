@@ -22,8 +22,8 @@ export const RegisterButton = styled.button`
 
 export const Wrapper1 = styled.div`
   text-align: center;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
 `;
 
 export const Details = styled.div`
@@ -91,7 +91,7 @@ export const Textarea = styled.textarea`
   border: 5px solid #DCDCDC;
   border-radius: 10px;
   transition: all 300ms ease hover;
-  width: 60%;
+  width: 100%;
   font-size: 16px;
   &:hover {
     border: 2px solid #08755E;
